@@ -1,2 +1,2 @@
 # ood
-Examples of Object-Oriented Design in C
+Examples of Object-Oriented Design (OOD) in C
