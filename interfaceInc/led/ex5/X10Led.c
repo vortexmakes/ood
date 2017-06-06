@@ -20,8 +20,7 @@ static const char *houseCode[] =
     "X10_M", "X10_N", "X10_O", "X10_P"
 };
 
-static
-void
+static void
 sendMessage(X10Led *me, const char *oper)
 {
     LedDriver *base = (LedDriver *)me;
@@ -32,8 +31,7 @@ sendMessage(X10Led *me, const char *oper)
                                                      me->unit);
 }
 
-static
-int
+static int
 isValid(X10Led *const me)
 {
     return (me && me->base.vptr);

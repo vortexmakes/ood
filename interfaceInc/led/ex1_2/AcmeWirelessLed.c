@@ -15,8 +15,7 @@ static const char *operStr[] =
     "TurnOn", "turnOff", "Lock", "Unlock"
 };
 
-static
-void
+static void
 sendMessage(AcmeWirelessLed *me, OPER oper)
 {
     LedDriver *ledDriver = &me->ledDriver;

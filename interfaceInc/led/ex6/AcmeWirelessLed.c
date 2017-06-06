@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include "AcmeWirelessLed.h"
 
+typedef struct AcmeWirelessLed AcmeWirelessLed;
 struct AcmeWirelessLed
 {
 	LedDriver base;
@@ -14,7 +15,7 @@ struct AcmeWirelessLed
 };
 
 static AcmeWirelessLed acmeWirelessLedObj;
-AcmeWirelessLed *acmeWirelessLed = &acmeWirelessLedObj;
+LedDriver *acmeWirelessLed = (LedDriver *)&acmeWirelessLedObj;
 
 static void
 sendMessage(AcmeWirelessLed *me, const char *oper)
@@ -46,18 +47,18 @@ turnOff(LedDriver *const me)
 }
 
 void 
-AcmeWirelessLed_init(AcmeWirelessLed *const me, const char *ssid, 
-                                                const char *key, int channel)
+AcmeWirelessLed_init(const char *ssid, 
+                     const char *key, int channel)
 {
     static const LedDriverVtbl vtbl = {turnOn, turnOff};
 
-    LedDriver *base = &me->base;
+    LedDriver *base = &acmeWirelessLedObj.base;
 
     base->id = 1;
     base->type = "Acme wireless";
     base->offset = offsetof(AcmeWirelessLed, base);
     base->vptr = &vtbl;
-    me->ssid = ssid;
-    me->key = key;
-    me->channel = channel;
+    acmeWirelessLedObj.ssid = ssid;
+    acmeWirelessLedObj.key = key;
+    acmeWirelessLedObj.channel = channel;
 }

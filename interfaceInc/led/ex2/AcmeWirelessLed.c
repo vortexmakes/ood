@@ -5,8 +5,7 @@
 #include <stdio.h>
 #include "AcmeWirelessLed.h"
 
-static
-void
+static void
 sendMessage(AcmeWirelessLed *me, const char *oper)
 {
     LedDriver *base = (LedDriver *)me;

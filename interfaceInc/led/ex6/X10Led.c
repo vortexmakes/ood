@@ -5,6 +5,17 @@
 #include <stdio.h>
 #include "X10Led.h"
 
+typedef struct X10Led X10Led;
+struct X10Led
+{
+	LedDriver base;
+    X10_HouseCode house;
+    int unit;    
+};
+
+static X10Led x10LedObj;
+LedDriver *x10Led = (LedDriver *)&x10LedObj;
+
 static const char *houseCode[] =
 {
     "X10_A", "X10_B", "X10_C", "X10_D", "X10_E", "X10_F",
@@ -15,8 +26,7 @@ static const char *houseCode[] =
 static void
 sendMessage(X10Led *me, const char *oper)
 {
-    LedDriver *base = &me->base;
-
+    LedDriver *base = (LedDriver *)me;
     printf("%s - driver=%s, type=%d, house=%s, unit=%d\r\n", oper, 
                                                      base->type, 
                                                      base->id,
@@ -41,15 +51,15 @@ turnOff(LedDriver *const me)
 }
 
 void 
-X10Led_init(X10Led *const me, X10_HouseCode house, int unit)
+X10Led_init(X10_HouseCode house, int unit)
 {
     static const LedDriverVtbl vtbl = {turnOn, turnOff};
-    LedDriver *base = &me->base;
+    LedDriver *base = &x10LedObj.base;
 
     base->id = 0;
     base->type = "X10";
     base->offset = offsetof(X10Led, base);
     base->vptr = &vtbl;
-    me->house = house;
-    me->unit = unit;
+    x10LedObj.house = house;
+    x10LedObj.unit = unit;
 }

@@ -12,8 +12,9 @@ struct X10Led
     int unit;    
 };
 
-static X10Led x10LedObj;
-X10Led *x10Led = &x10LedObj;
+static X10Led x10LedAObj, x10LedBObj;
+X10Led *x10LedA = &x10LedAObj;
+X10Led *x10LedB = &x10LedBObj;
 
 static const char *houseCode[] =
 {
@@ -22,8 +23,7 @@ static const char *houseCode[] =
     "X10_M", "X10_N", "X10_O", "X10_P"
 };
 
-static
-void
+static void
 sendMessage(X10Led *me, const char *oper)
 {
     LedDriver *base = (LedDriver *)me;

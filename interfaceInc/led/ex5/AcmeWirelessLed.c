@@ -15,8 +15,7 @@ struct AcmeWirelessLed
 
 static AcmeWirelessLed pool[ACME_MAX_NUM_LEDS];
 
-static
-void
+static void
 sendMessage(AcmeWirelessLed *me, const char *oper)
 {
     LedDriver *base = (LedDriver *)me;
@@ -29,8 +28,7 @@ sendMessage(AcmeWirelessLed *me, const char *oper)
                                                      me->channel);
 }
 
-static
-int
+static int
 isValid(AcmeWirelessLed *const me)
 {
     return (me && me->base.vptr);
