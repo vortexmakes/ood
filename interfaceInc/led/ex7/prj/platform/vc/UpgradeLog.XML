@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="interface">
+</Property><Property Name="Solution File" Value="C:\Users\leo\Google Drive\MyProject\code\interfaceInC\ex1\prj (1)\platform\vc\interface.sln">
+</Property><Property Name="Date" Value="domingo, 07 de mayo de 2017">
+</Property><Property Name="Time" Value="17:53 p.m.">
+</Property></Properties><Event ErrorLevel="0" Project="interface" Source="interface.vcproj" Description="Converting project file 'C:\Users\leo\Google Drive\MyProject\code\interfaceInC\ex1\prj (1)\platform\vc\interface.vcproj'.">
+</Event><Event ErrorLevel="1" Project="interface" Source="interface.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="interface" Source="interface.vcproj" Description="Done converting to new project file 'C:\Users\leo\Google Drive\MyProject\code\interfaceInC\ex1\prj (1)\platform\vc\interface.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="interface" Source="interface.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="interface.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="interface.sln" Description="Converted">
+</Event></UpgradeLog>

@@ -8,29 +8,29 @@
 #include "X10Led.h"
 #include "AcmeWirelessLed.h"
 
-static X10Led *x10Led;
-static AcmeWirelessLed *acmeWirelessLed;
+static X10Led *ledA;
+static AcmeWirelessLed *ledB;
 
 int
 main(void)
 {
-    x10Led = X10Led_ctor(X10_A, 8);
+    ledA = X10Led_ctor(X10_A, 8);
 
-    acmeWirelessLed = AcmeWirelessLed_ctor("Home", "123abc", 4);
-    if (acmeWirelessLed == (AcmeWirelessLed *)0)
+    ledB = AcmeWirelessLed_ctor("Home", "123abc", 4);
+    if (ledB == (AcmeWirelessLed *)0)
     {
         printf("Can't create a AcmeWirelessLed object\r\n");
         exit(EXIT_FAILURE);
     }
 
-	LedDriver_turnOn((LedDriver *)x10Led);
-	LedDriver_turnOff((LedDriver *)x10Led);
+	LedDriver_turnOn((LedDriver *)ledA);
+	LedDriver_turnOff((LedDriver *)ledA);
 
-	LedDriver_turnOn((LedDriver *)acmeWirelessLed);
-	LedDriver_turnOff((LedDriver *)acmeWirelessLed);
+	LedDriver_turnOn((LedDriver *)ledB);
+	LedDriver_turnOff((LedDriver *)ledB);
 
-    AcmeWirelessLed_dtor(acmeWirelessLed);
-    X10Led_dtor(x10Led);
+    AcmeWirelessLed_dtor(ledB);
+    X10Led_dtor(ledA);
 
     getchar();
     return 0;

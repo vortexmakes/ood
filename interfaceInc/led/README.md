@@ -32,3 +32,7 @@ implementaciÃ³n.
 
 ## ex6
 Igual que ex1 pero singleton.
+
+## ex7
+Igual que ex3 pero soporta una única implementación de la interface al mismo 
+tiempo.

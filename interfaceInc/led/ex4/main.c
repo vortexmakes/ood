@@ -9,24 +9,24 @@
 void
 main(void)
 {
-    LedDriver *someObj, *otherObj;
+    LedDriver *ledA, *ledB;
 
     X10Led_init(x10LedA, X10_A, 8);
     X10Led_init(x10LedB, X10_B, 6);
     AcmeWirelessLed_init(acmeWirelessLed, "Home", "123abc", 4);
 
-    someObj = (LedDriver *)x10LedA;
-    otherObj = (LedDriver *)acmeWirelessLed;
+    ledA = (LedDriver *)x10LedA;
+    ledB = (LedDriver *)acmeWirelessLed;
 
-	LedDriver_turnOn(someObj);
-	LedDriver_turnOff(someObj);
+	LedDriver_turnOn(ledA);
+	LedDriver_turnOff(ledA);
 
-	LedDriver_turnOn(otherObj);
-	LedDriver_turnOff(otherObj);
+	LedDriver_turnOn(ledB);
+	LedDriver_turnOff(ledB);
 
-    someObj = (LedDriver *)x10LedB;
-	LedDriver_turnOn(someObj);
-	LedDriver_turnOff(someObj);
+    ledA = (LedDriver *)x10LedB;
+	LedDriver_turnOn(ledA);
+	LedDriver_turnOff(ledA);
 
     getchar();
 }

@@ -12,23 +12,23 @@ static AcmeWirelessLed acmeWirelessLed;
 void
 main(void)
 {
-    LedDriver *someObj, *otherObj;
+    LedDriver *ledA, *ledB;
 
     X10Led_init(&x10Led, X10_A, 8);
     AcmeWirelessLed_init(&acmeWirelessLed, "Home", "123abc", 4);
 
-    someObj = &x10Led.base;
-    otherObj = &acmeWirelessLed.base;
+    ledA = &x10Led.base;
+    ledB = &acmeWirelessLed.base;
 
-	LedDriver_turnOn(someObj);
-	LedDriver_turnOff(someObj);
+	LedDriver_turnOn(ledA);
+	LedDriver_turnOff(ledA);
 
-	LedDriver_turnOn(otherObj);
-	LedDriver_turnOff(otherObj);
+	LedDriver_turnOn(ledB);
+	LedDriver_turnOff(ledB);
 
-    someObj = &acmeWirelessLed.base;
-	LedDriver_turnOn(someObj);
-	LedDriver_turnOff(someObj);
+    ledA = &acmeWirelessLed.base;
+	LedDriver_turnOn(ledA);
+	LedDriver_turnOff(ledA);
 
     getchar();
 }

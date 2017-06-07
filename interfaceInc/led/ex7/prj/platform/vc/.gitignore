@@ -1,0 +1,8 @@
+*.sdf
+*.user
+*.opensdf
+*.log
+*.ncb
+*.XML
+/Debug
+/Release
